@@ -12,7 +12,11 @@ export const PROJECTS_CARD: ProjectCardProps[] = [
   {
     name: "Event Management (Graduation Project)",
     favicon: "/favicon.svg",
-    imageUrl: ["/favicon.ico"],
+    imageUrl: [
+      "/images/event-management/1.png",
+      "/images/event-management/2.png",
+      "/images/event-management/3.png",
+    ],
     description:
       "Graduation project for end-to-end event management. Integrated Firebase for secure authentication, Google Maps for location handling, and Stripe for seamless payments. Includes an interactive chatbot for personalized event planning and richer user interaction.",
     tags: ["Flutter", "Firebase", "Google Maps", "Stripe", "Chatbot"],

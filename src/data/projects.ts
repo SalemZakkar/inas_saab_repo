@@ -4,7 +4,7 @@ export const PROJECTS_CARD: ProjectCardProps[] = [
   {
     name: "ASINNAH Academy",
     favicon: "/favicon.svg",
-    imageUrl: ["/favicon.ico"],
+    imageUrl: ["/images/asinnah/1.png"],
     description:
       "An academic mobile application for browsing, purchasing, and managing full and partial courses. Features deep linking with authentication-aware routing, secure Telegram-based login, and reliable online/offline access to video content and PDF/text resources with enhanced buffering and error handling. Built with BLoC (Cubit) for scalable state management and deployed for active users in Homs.",
     tags: ["Flutter", "BLoC", "Hive", "Deep Linking", "Telegram Auth"],

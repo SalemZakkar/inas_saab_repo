@@ -4,8 +4,8 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = withBundleAnalyzer({
-  // Choose output mode based on env variables
-  output:"standalone",
+  // Only use "standalone" for Docker builds; leave undefined for Vercel
+  output: process.env.BUILD_STANDALONE === "true" ? "standalone" : undefined,
 
   reactStrictMode: true,
 

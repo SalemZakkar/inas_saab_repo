@@ -1,0 +1,17 @@
+export const siteMetadata = {
+  title: "Inas Saab portfolio",
+  author: "Inas Saab",
+  headerTitle: "Inas Saab",
+  description: "Flutter Mobile App Developer",
+  language: "en-us",
+  theme: "light",
+  siteName: "https://inasalsaabb.github.io/my_protofolio/",
+  siteUrl: "https://inasalsaabb.github.io/my_protofolio/",
+  siteLogo: "/favicon.ico",
+  image: "/static/homepage.png",
+  email: "inassaab0@gmail.com",
+  github: "https://github.com/InasAlSaabb",
+  linkedin: "https://www.linkedin.com/in/inas-saab",
+  locale: "en-US",
+  phone: "+963982485621",
+};

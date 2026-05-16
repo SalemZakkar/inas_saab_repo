@@ -17,6 +17,13 @@ Implemented secure user authentication and account management using Telegram log
 Utilized BLoC (Cubit) for efficient and scalable state management.\n
 Successfully deployed the application and ensured stable performance for active users in Homs.
     `,
+    links: [
+      {
+        label: "Google Play",
+        href: "https://play.google.com/store/apps/details?id=com.asinnahaacademy",
+        type: "play",
+      },
+    ],
   },
   {
     title: "Flutter Developer",

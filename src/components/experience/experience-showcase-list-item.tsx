@@ -2,6 +2,8 @@ import { RefObject, useRef } from "react";
 import Link from "next/link";
 
 import { motion, useScroll } from "framer-motion";
+import { FaGooglePlay, FaAppStoreIos, FaLink } from "react-icons/fa";
+import { IconType } from "react-icons";
 
 export interface ExperienceListIconProps {
   iconRef: RefObject<HTMLElement>;
@@ -37,6 +39,20 @@ function ShowCaseLiIcon(props: ExperienceListIconProps) {
   );
 }
 
+export type ExperienceLinkType = "play" | "appstore" | "web";
+
+export interface ExperienceLink {
+  label: string;
+  href: string;
+  type?: ExperienceLinkType;
+}
+
+const LINK_ICONS: Record<ExperienceLinkType, IconType> = {
+  play: FaGooglePlay,
+  appstore: FaAppStoreIos,
+  web: FaLink,
+};
+
 export interface ExperienceShowcaseListItemProps {
   title: string;
   organisation: {
@@ -46,6 +62,7 @@ export interface ExperienceShowcaseListItemProps {
   date: string;
   location: string;
   description: string;
+  links?: ExperienceLink[];
 }
 
 export default function ExperienceShowcaseListItem(
@@ -80,6 +97,26 @@ export default function ExperienceShowcaseListItem(
         <p className="text-sm font-medium text-muted-foreground xs:text-base whitespace-pre-line">
           {props.description}
         </p>
+        {props.links && props.links.length > 0 && (
+          <ul className="mt-3 flex flex-wrap gap-2">
+            {props.links.map((link) => {
+              const Icon = LINK_ICONS[link.type ?? "web"];
+              return (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-3 py-1.5 text-xs font-medium text-accent transition hover:bg-accent/20 hover:text-accent xs:text-sm"
+                  >
+                    <Icon className="h-4 w-4" />
+                    <span>{link.label}</span>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        )}
       </motion.div>
     </li>
   );

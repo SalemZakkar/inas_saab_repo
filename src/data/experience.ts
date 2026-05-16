@@ -5,7 +5,7 @@ export const EXPERIENCE: ExperienceShowcaseListItemProps[] = [
     title: "Flutter Developer",
     organisation: {
       name: "ASINNAH Academy",
-      href: "#",
+      href: "https://academy.asinnah.com/en",
     },
     date: "JUN 2025 - PRESENT",
     location: "Homs, Syria - Full time",

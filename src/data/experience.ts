@@ -43,6 +43,21 @@ Provided statistics to monitor performance daily, weekly, monthly, or overall.
   {
     title: "Flutter Developer",
     organisation: {
+      name: "Click",
+      href: "#",
+    },
+    date: "JUN 2024 - OCT 2024",
+    location: "Homs, Syria - Freelance",
+    description: `
+Built a mobile commerce app serving users in Homs with browsing, ordering, and delivery flows.\n
+Integrated Google Maps for product browsing and delivery location selection.\n
+Implemented secure phone number verification using SMS one-time passwords.\n
+Integrated in-app payments through Bank Al-Sham for fast and reliable local transactions.
+    `,
+  },
+  {
+    title: "Flutter Developer",
+    organisation: {
       name: "Velveta",
       href: "#",
     },

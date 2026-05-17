@@ -2,6 +2,14 @@ import { type ProjectCardProps } from "@/components/projects/project-card";
 
 export const PROJECTS_CARD: ProjectCardProps[] = [
   {
+    name: "Click",
+    favicon: "/favicon.svg",
+    imageUrl: ["/images/click/1.png"],
+    description:
+      "A mobile commerce app built for users in Homs. Features an interactive map for product browsing and delivery location selection, secure phone number verification through SMS one-time passwords, and integrated in-app payments via Bank Al-Sham for fast and reliable local transactions.",
+    tags: ["Flutter", "Google Maps", "SMS OTP", "Bank Al-Sham", "E-commerce"],
+  },
+  {
     name: "ASINNAH Academy",
     favicon: "/favicon.svg",
     imageUrl: ["/images/asinnah/1.png"],

@@ -5,7 +5,6 @@ export default function Document() {
     <Html lang="en">
       <Head>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="alternate icon" href="/favicon.ico" />
       </Head>
       <body className="bg-background text-zinc-950 antialiased selection:bg-accent selection:text-background">
         <Main />

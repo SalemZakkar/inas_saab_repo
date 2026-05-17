@@ -46,12 +46,11 @@ export default function Corosel({ aspectRatio = 1, images }: CoroselProps) {
   };
 
   return (
-    <div className="relative w-full overflow-hidden" style={{ aspectRatio }}>
+    <div className="relative w-full overflow-hidden bg-zinc-900" style={{ aspectRatio }}>
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={page}
-          className="h-full w-full bg-cover bg-center bg-no-repeat"
-          style={{ backgroundImage: `url(${images[imageIndex]})` }}
+          className="absolute inset-0"
           custom={direction}
           variants={variant}
           initial="enter"
@@ -72,7 +71,16 @@ export default function Corosel({ aspectRatio = 1, images }: CoroselProps) {
               paginate(-1);
             }
           }}
-        />
+        >
+          <div
+            className="absolute inset-0 scale-110 bg-cover bg-center bg-no-repeat blur-2xl opacity-50"
+            style={{ backgroundImage: `url(${images[imageIndex]})` }}
+          />
+          <div
+            className="absolute inset-0 bg-contain bg-center bg-no-repeat"
+            style={{ backgroundImage: `url(${images[imageIndex]})` }}
+          />
+        </motion.div>
       </AnimatePresence>
       <div className="absolute bottom-0 flex h-12 w-full items-center justify-center gap-2">
         <button

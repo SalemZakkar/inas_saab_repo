@@ -28,19 +28,31 @@ export default function MobileMenu({
 
   return (
     <Transition show={openMenu} as={Fragment}>
-      <Dialog as="div" className="z-50" onClose={setOpenMenu}>
-        <div className="fixed inset-0 flex items-center justify-center">
-          <Transition.Child
-            as={Fragment}
-            enter="ease-out duration-300"
-            enterFrom="opacity-0 bottom-full"
-            enterTo="opacity-100 bottom-[15%]"
-            leave="ease-in duration-200"
-            leaveFrom="opacity-100 bottom-[15%]"
-            leaveTo="opacity-0 bottom-full"
-          >
-            <Dialog.Panel className="pointer-events-none absolute flex min-h-[85%] w-full flex-col items-center justify-center overflow-y-auto rounded-b-2xl border-2 border-accent/20 bg-background px-6 py-8 text-accent shadow-lg shadow-accent/10 md:px-10 md:py-16">
-              <div className="pointer-events-auto flex flex-col items-center gap-6 text-center">
+      <Dialog as="div" className="relative z-50" onClose={setOpenMenu}>
+        <Transition.Child
+          as={Fragment}
+          enter="ease-out duration-200"
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave="ease-in duration-150"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
+        >
+          <div className="fixed inset-0 bg-background" aria-hidden="true" />
+        </Transition.Child>
+
+        <div className="fixed inset-0 overflow-y-auto">
+          <div className="flex min-h-full items-center justify-center p-4">
+            <Transition.Child
+              as={Fragment}
+              enter="ease-out duration-300"
+              enterFrom="opacity-0 -translate-y-8"
+              enterTo="opacity-100 translate-y-0"
+              leave="ease-in duration-200"
+              leaveFrom="opacity-100 translate-y-0"
+              leaveTo="opacity-0 -translate-y-8"
+            >
+              <Dialog.Panel className="flex w-full max-w-md flex-col items-center justify-center gap-6 rounded-2xl border-2 border-accent/20 bg-background p-8 text-accent shadow-lg shadow-accent/10">
                 {routes.map((link, i) => (
                   <button
                     key={i}
@@ -57,9 +69,9 @@ export default function MobileMenu({
                   </button>
                 ))}
                 <ThemeSwitch setClose={setOpenMenu} />
-              </div>
-            </Dialog.Panel>
-          </Transition.Child>
+              </Dialog.Panel>
+            </Transition.Child>
+          </div>
         </div>
       </Dialog>
     </Transition>

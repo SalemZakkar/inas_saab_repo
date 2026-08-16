@@ -8,6 +8,7 @@ import { siteMetadata } from "@/data/siteMetaData.js";
 
 export default function LandingHero() {
   const [scrollY, setScrollY] = useState(0);
+  const [isDesktop, setIsDesktop] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
   let progress = 0;
@@ -27,10 +28,20 @@ export default function LandingHero() {
     return () => document.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 768px)");
+    const update = () => setIsDesktop(mq.matches);
+
+    update();
+    mq.addEventListener("change", update);
+
+    return () => mq.removeEventListener("change", update);
+  }, []);
+
   return (
     <motion.section
       animate={{
-        transform: `translateY(${progress * 20}vh)`,
+        transform: `translateY(${isDesktop ? progress * 20 : 0}vh)`,
       }}
       transition={{ type: "spring", stiffness: 100 }}
       ref={ref}

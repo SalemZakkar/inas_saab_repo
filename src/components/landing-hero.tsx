@@ -1,4 +1,6 @@
-import { AnimatePresence } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+
+import { AnimatePresence, motion } from "framer-motion";
 
 import FadeUp from "@/animation/fade-up";
 import {
@@ -10,10 +12,38 @@ import {
 import { siteMetadata } from "@/data/siteMetaData.js";
 
 export default function LandingHero() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const height = ref.current?.clientHeight ?? 0;
+
+      if (!height) return;
+
+      setProgress(Math.min(1, window.scrollY / height));
+    };
+
+    handleScroll();
+    document.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => document.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <section className="pointer-events-none flex min-h-[calc(100vh-200px)] items-center px-6 py-16 sm:px-14 md:px-20">
+    <section
+      ref={ref}
+      className="pointer-events-none flex min-h-[calc(100vh-200px)] items-center px-6 py-16 sm:px-14 md:px-20"
+    >
       <div className="w-full">
-        <div className="mx-auto max-w-7xl">
+        <motion.div
+          className="mx-auto max-w-7xl"
+          animate={{
+            y: progress * -60,
+            opacity: 1 - progress * 0.7,
+          }}
+          transition={{ type: "spring", stiffness: 100, damping: 20 }}
+        >
           <AnimatePresence>
             <FadeUp key="title-main" duration={0.6}>
               <h1 className="bg-accent bg-clip-text py-2 text-5xl font-bold text-transparent sm:text-6xl md:text-7xl xl:text-8xl">
@@ -90,7 +120,7 @@ export default function LandingHero() {
               </div>
             </FadeUp>
           </AnimatePresence>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

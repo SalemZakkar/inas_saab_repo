@@ -22,7 +22,7 @@ export default function ExperienceShowcaseList(
   });
 
   return (
-<div className="mx-auto my-40 w-[90%] px-4 md:my-60">
+    <div className="mx-auto my-40 w-[90%] px-4 md:my-60">
       <h2 className="mb-16 w-full bg-gradient-to-r from-accent/70 to-accent bg-clip-text text-center text-3xl font-bold text-transparent xs:text-4xl sm:text-6xl md:mb-28 md:text-8xl">
         {props.title}
       </h2>

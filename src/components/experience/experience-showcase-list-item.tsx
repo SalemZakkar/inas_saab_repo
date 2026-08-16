@@ -94,7 +94,7 @@ export default function ExperienceShowcaseListItem(
         <span className="text-sm font-medium text-foreground xs:text-base">
           {props.date} | {props.location}
         </span>
-        <p className="text-sm font-medium text-muted-foreground xs:text-base whitespace-pre-line">
+        <p className="whitespace-pre-line text-sm font-medium text-muted-foreground xs:text-base">
           {props.description}
         </p>
         {props.links && props.links.length > 0 && (

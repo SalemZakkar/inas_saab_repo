@@ -16,7 +16,7 @@ export default function AboutHero() {
             </h1>
           </FadeUp>
           <FadeUp key="description-1" duration={0.6} delay={0.2}>
-            <p className="mt-8 text-base leading-relaxed font-medium text-zinc-900 dark:text-zinc-300 sm:text-lg md:text-lg">
+            <p className="mt-8 text-base font-medium leading-relaxed text-zinc-900 dark:text-zinc-300 sm:text-lg md:text-lg">
               Mobile App Developer with over 4 years of experience in IT and a
               background in Computer and Automation Engineering. Passionate
               about building high-quality, user-friendly Android and iOS

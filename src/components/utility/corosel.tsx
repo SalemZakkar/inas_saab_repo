@@ -46,7 +46,10 @@ export default function Corosel({ aspectRatio = 1, images }: CoroselProps) {
   };
 
   return (
-    <div className="relative w-full overflow-hidden bg-zinc-900" style={{ aspectRatio }}>
+    <div
+      className="relative w-full overflow-hidden bg-zinc-900"
+      style={{ aspectRatio }}
+    >
       <AnimatePresence initial={false} custom={direction}>
         <motion.div
           key={page}
@@ -73,7 +76,7 @@ export default function Corosel({ aspectRatio = 1, images }: CoroselProps) {
           }}
         >
           <div
-            className="absolute inset-0 scale-110 bg-cover bg-center bg-no-repeat blur-2xl opacity-50"
+            className="absolute inset-0 scale-110 bg-cover bg-center bg-no-repeat opacity-50 blur-2xl"
             style={{ backgroundImage: `url(${images[imageIndex]})` }}
           />
           <div

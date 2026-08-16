@@ -8,7 +8,7 @@ import { siteMetadata } from "@/data/siteMetaData.js";
 export default function Home() {
   return (
     <>
-         <NextSeo
+      <NextSeo
         title="Inas Saab | Flutter Mobile App Developer"
         description="Inas Saab is a Flutter Mobile App Developer with over 4 years of experience building Android and iOS applications."
         canonical={siteMetadata.siteUrl}

@@ -3,7 +3,12 @@ import { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 import FadeUp from "@/animation/fade-up";
-import { BiLogoGithub, BiLogoLinkedin, BiMailSend, BiSolidPhoneCall } from "react-icons/bi";
+import {
+  BiLogoGithub,
+  BiLogoLinkedin,
+  BiMailSend,
+  BiSolidPhoneCall,
+} from "react-icons/bi";
 import { siteMetadata } from "@/data/siteMetaData.js";
 
 export default function LandingHero() {
@@ -67,12 +72,9 @@ export default function LandingHero() {
                 My core stack is{" "}
                 <span className="font-semibold text-accent">Flutter</span>,{" "}
                 <span className="font-semibold text-accent">Dart</span>, and{" "}
-                <span className="font-semibold text-accent">
-                  BLoC / Cubit
-                </span>{" "}
+                <span className="font-semibold text-accent">BLoC / Cubit</span>{" "}
                 for scalable state management.
-                <br></br>
-                I work with{" "}
+                <br></br>I work with{" "}
                 <span className="font-semibold text-accent">Firebase</span>,{" "}
                 <span className="font-semibold text-accent">Hive</span>,{" "}
                 <span className="font-semibold text-accent">REST APIs</span>,{" "}
@@ -115,7 +117,7 @@ export default function LandingHero() {
                 </a>
               </div>
             </FadeUp>
-            <FadeUp key="contact-icons" duration={0.6} delay={0.4}>
+            <FadeUp key="download-cv" duration={0.6} delay={0.4}>
               <div className="pointer-events-auto mt-8 flex items-center gap-6">
                 <a
                   href="/cv.pdf"

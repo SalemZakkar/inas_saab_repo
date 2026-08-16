@@ -1,6 +1,4 @@
-import { useEffect, useRef, useState } from "react";
-
-import { AnimatePresence, motion } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 
 import FadeUp from "@/animation/fade-up";
 import {
@@ -12,46 +10,8 @@ import {
 import { siteMetadata } from "@/data/siteMetaData.js";
 
 export default function LandingHero() {
-  const [scrollY, setScrollY] = useState(0);
-  const [isDesktop, setIsDesktop] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
-
-  let progress = 0;
-  const { current: elContainer } = ref;
-
-  if (elContainer) {
-    progress = Math.min(1, scrollY / elContainer.clientHeight);
-  }
-
-  const handleScroll = () => {
-    setScrollY(window.scrollY);
-  };
-
-  useEffect(() => {
-    document.addEventListener("scroll", handleScroll);
-
-    return () => document.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    const mq = window.matchMedia("(min-width: 768px)");
-    const update = () => setIsDesktop(mq.matches);
-
-    update();
-    mq.addEventListener("change", update);
-
-    return () => mq.removeEventListener("change", update);
-  }, []);
-
   return (
-    <motion.section
-      animate={{
-        transform: `translateY(${isDesktop ? progress * 20 : 0}vh)`,
-      }}
-      transition={{ type: "spring", stiffness: 100 }}
-      ref={ref}
-      className="pointer-events-none flex max-h-[1000px] min-h-[calc(100vh-200px)] items-center px-6 sm:px-14 md:h-[calc(100vh-200px)] md:min-h-max md:px-20"
-    >
+    <section className="pointer-events-none flex min-h-[calc(100vh-200px)] items-center px-6 py-16 sm:px-14 md:px-20">
       <div className="w-full">
         <div className="mx-auto max-w-7xl">
           <AnimatePresence>
@@ -132,6 +92,6 @@ export default function LandingHero() {
           </AnimatePresence>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }
